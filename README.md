@@ -28,7 +28,8 @@
 
 ## 📟 iTaxi CRUD
 > 코드 및 기능  
-  <manager.h>
+  
+<manager.h>
 ```c
 #include<stdio.h>
 #include<string.h>
