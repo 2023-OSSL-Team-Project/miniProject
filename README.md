@@ -85,7 +85,7 @@ int editPlace(Recruit *s, int count); // 출발, 도착 지점 수정
   
 <br/>
 
-#### 김채린 [Y-eseong GITHUB LINK](https://github.com/seizethedaylyn)
+#### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
  - 
  - 
 
