@@ -1,4 +1,4 @@
-# 🧊 miniProject
+# 📋 miniProject
 
 <div align="center"> 
 
@@ -7,24 +7,24 @@
   ## *iTaxi*  
 </div>
   
-## 📟 주제
+## 🚖 주제
  - iTaxi - 한동이들의 교통 어플리케이션
 
 <br/>
 
-## 📟 iTaxi에 대한 소개
+## 🚖 iTaxi에 대한 소개
   - 한동대학교 구성원을 위한 택시, 카풀 공유경제 플랫폼입니다.
   - 
 
 <br/>
   
-##  📟 iTaxi가 가지고 있는 대략적인 기능 설명
+##  🚖 iTaxi가 가지고 있는 대략적인 기능 설명
   - 
   - 
 
 <br/>
 
-## 📟 iTaxi CRUD
+## 🚖 iTaxi CRUD
 > 코드 및 기능  
   
 <manager.h>
@@ -71,13 +71,13 @@ int editPlace(Recruit *s, int count); // 출발, 도착 지점 수정
 
 <br/>
 
-## 📟 개발환경 및 언어
+## 🚖 개발환경 및 언어
   - git 
   - vs code
 
 <br/>
 
-## 📟 팀소개 및 팀원이 맡은 역할
+## 🚖 팀소개 및 팀원이 맡은 역할
 ### 팀원
  #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
   - 
