@@ -4,7 +4,7 @@
 
 <img src="" height="" width="">
  
-  ## *Dessert_KIOSK*  
+  ## *iTaxi*  
 </div>
   
 ## 📟 주제
@@ -76,4 +76,4 @@ void todayMenu(Product *p); // 랜덤으로 오늘의 추천 메뉴 알려주는
  - 
  - 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/98035984/167239410-4cd9722d-1464-49e7-b82f-509ce0736362.jpeg" height="150px" width="300px"></p>
+<p align="center"><img src="" height="" width=""></p>
