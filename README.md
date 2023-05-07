@@ -29,32 +29,43 @@
 ## 📟 CUBE KIOSK CRUD
 > 코드 및 기능
 ```c
-typedef struct {
-    int contents; // 1: 음료 2: 디저트
-    char name[100];
-    int price;
-    int sugar;
-    }Product;
-    // 구조체 
-    
-int createProduct(Product *p); // 제품을 추가하는 함수 => 메뉴 선택
-void readProduct(Product *p); // 하나의 제품 출력 함수 => 구매 목록 보기
-int updateProduct(Product *p); // 제품을 수정하는 함수 => 구매 목록 수정 
-int deleteProduct(Product *p); // 제품을 삭제하는 함수 => 구매 취소 [환불]
+#include<stdio.h>
+#include<string.h>
 
-void saveProduct(Product *p, int count); //데이터를 파일에 저장 하는 함수
-int loadProduct(Product *p);// 저장된 데이터를 불러오는 함수
+typedef struct{
+	char depart[20]; // 출발지
+	char arrive[20]; // 도착지
+	short int date; // 출발날짜 (예, 0326)
+	short int time; // 출발시간 (예, 1940)
+	short int num; // 모집인원
+	char type; // 모집종류(T/C) (T: 택시, C: 카풀)
+	short int now_num; // 현재 모집된 인원
+	char memo[100]; // 메모
+}Recruit;
 
-int selectMenu(); // 데이터를 다룰 때, 원하는 메뉴를 선택하는 함수
-int selectDataNo(Product *p, int count); // 제품 번호를 불러오는 
-int listProduct(Product *p, int count); // 전체 등록된 제품 리스트 출력
-//검색기능 이름/가격/배송방법
+int addRecruit(Recruit *s); // 모집 추가 함수
+void readRecruit(Recruit s); // 모집 조회 함수
+int updateRecruit(Recruit *s); // 모집 수정 함수
+int deleteRecruit(Recruit *s);
 
-void searchProductName(Product *p, int count); // 메뉴이름 검색
-void searchProductPrice(Product *p, int count); // 메뉴가격 검색 
-void searchProductSugar(Product *p, int count); // 메뉴 설탕 추가 여부로 검색
+```
 
-void todayMenu(Product *p); // 랜덤으로 오늘의 추천 메뉴 알려주는 기능
+```c
+#include <stdio.h>
+#include "product.h"
+
+int selectMenu(); // 메뉴 선택
+
+int selectDataNo(Recruit *s[], int count); // 데이터 번호 선택
+void listRecruit(Recruit *s[], int count); // 모집 리스트 출력
+
+int joinRecruit(Recruit *s); // 모집 참여
+int exitjoinRecruit(Recruit *s); // 모집 참여 취소 
+int searchPlace(Recruit *s, int count); // 출발지 -> 도착지 검색
+int searchDay(Recruit *s, int count); // 날짜 검색
+
+int editTime(Recruit *s, int count); //출발 시간, 날짜 수정
+int editPlace(Recruit *s, int count); // 출발, 도착 지점 수정
 
 ```
 
