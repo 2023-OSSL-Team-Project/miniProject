@@ -46,7 +46,7 @@ typedef struct{
 int addRecruit(Recruit *s); // 모집 추가 함수
 void readRecruit(Recruit s); // 모집 조회 함수
 int updateRecruit(Recruit *s); // 모집 수정 함수
-int deleteRecruit(Recruit *s); // 모집 삭제 수함수
+int deleteRecruit(Recruit *s); // 모집 삭제 함수
 
 ```
 <product.h>
