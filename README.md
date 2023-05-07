@@ -1,28 +1,79 @@
-# CSEE-SelfCheck : 공학프로젝트기획 수업 수강 확인 서비스
+# 🧊 miniProject
 
-## 소개
+<div align="center"> 
 
-한동대학교 학생들이 공학프로젝트 수업을 수강하는데에 있어, 본인이 수강을 할 수 있는지 가능 여부를 셀프 체크하고, 어떤 학생들이 수강 할 수 있는지 여부 등을 확인하는 서비스입니다.
+<img src="" height="" width="">
+ 
+  ## *Dessert_KIOSK*  
+</div>
+  
+## 📟 주제
+ - iTaxi - 한동이들의 교통 어플리케이션
 
-## 참여자
+<br/>
 
-| ![](https://github.com/gomster96.png) | ![](https://github.com/kimjueun1.png) | ![](https://github.com/skLee-HGU.png) |
-| :--------------------------------------: | :-----------------------------------: | :------------------------------------: |
-|             **안병웅**              |            **김주은**            |            **이선경**             |
+## 📟 iTaxi에 대한 소개
+  - 한동대학교 구성원을 위한 택시, 카풀 공유경제 플랫폼입니다.
+  - 
 
-## 기술스택
+<br/>
+  
+##  📟 iTaxi가 가지고 있는 대략적인 기능 설명
+  - 
+  - 
 
-| division        | stack                                                                                                                                                                                                                                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Front-end       | <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">  <img src="https://img.shields.io/badge/emotion-5B0BB5?style=for-the-badge&logo=funimation&logoColor=black"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=black"> |
-| Back-end        |  <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=black"> <img src="https://img.shields.io/badge/jpa-6DB33F?style=for-the-badge&logo=springboot&logoColor=black">|
-| Code Management | <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=black"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=black"> |
-| Formatting      | <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black">                                 |
-| DB              | <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=black"> |
+<br/>
 
-## 기획서
+## 📟 CUBE KIOSK CRUD
+> 코드 및 기능
+```c
+typedef struct {
+    int contents; // 1: 음료 2: 디저트
+    char name[100];
+    int price;
+    int sugar;
+    }Product;
+    // 구조체 
+    
+int createProduct(Product *p); // 제품을 추가하는 함수 => 메뉴 선택
+void readProduct(Product *p); // 하나의 제품 출력 함수 => 구매 목록 보기
+int updateProduct(Product *p); // 제품을 수정하는 함수 => 구매 목록 수정 
+int deleteProduct(Product *p); // 제품을 삭제하는 함수 => 구매 취소 [환불]
 
-[Figma Link](https://www.figma.com/file/PWOrxikyK7YTAdcYR2YNtS/kimleean?node-id=0%3A1)
+void saveProduct(Product *p, int count); //데이터를 파일에 저장 하는 함수
+int loadProduct(Product *p);// 저장된 데이터를 불러오는 함수
 
-## 백로그
+int selectMenu(); // 데이터를 다룰 때, 원하는 메뉴를 선택하는 함수
+int selectDataNo(Product *p, int count); // 제품 번호를 불러오는 
+int listProduct(Product *p, int count); // 전체 등록된 제품 리스트 출력
+//검색기능 이름/가격/배송방법
 
+void searchProductName(Product *p, int count); // 메뉴이름 검색
+void searchProductPrice(Product *p, int count); // 메뉴가격 검색 
+void searchProductSugar(Product *p, int count); // 메뉴 설탕 추가 여부로 검색
+
+void todayMenu(Product *p); // 랜덤으로 오늘의 추천 메뉴 알려주는 기능
+
+```
+
+<br/>
+
+## 📟 개발환경 및 언어
+  - git 
+  - vs code
+
+<br/>
+
+## 📟 팀소개 및 팀원이 맡은 역할
+### 팀원
+ #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
+  - Repo Owner
+  - 
+  
+<br/>
+
+#### 김채린 [Y-eseong GITHUB LINK](https://github.com/seizethedaylyn)
+ - 
+ - 
+
+<p align="center"><img src="https://user-images.githubusercontent.com/98035984/167239410-4cd9722d-1464-49e7-b82f-509ce0736362.jpeg" height="150px" width="300px"></p>
