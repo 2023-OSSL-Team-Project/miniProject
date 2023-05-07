@@ -27,7 +27,7 @@
 <br/>
 
 ## 📟 iTaxi CRUD
-> 코드 및 기능
+> 코드 및 기능  
 <manager.h>
 ```c
 #include<stdio.h>
@@ -81,7 +81,7 @@ int editPlace(Recruit *s, int count); // 출발, 도착 지점 수정
 ## 📟 팀소개 및 팀원이 맡은 역할
 ### 팀원
  #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
-  - Repo Owner
+  - 
   - 
   
 <br/>
