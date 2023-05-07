@@ -2,7 +2,7 @@
 
 <div align="center"> 
 
-<img src="https://user-images.githubusercontent.com/130302221/236679887-e07f2804-ddea-450a-aee1-2f6a0b3f2dbb.png" height="" width="">
+<img src="https://user-images.githubusercontent.com/130302221/236679887-e07f2804-ddea-450a-aee1-2f6a0b3f2dbb.png" height="700" width="700">
  
   ## *iTaxi*  
 </div>
