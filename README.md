@@ -2,7 +2,9 @@
 
 <div align="center"> 
 
-//<img src="" height="" width="">
+<!--
+<img src="" height="" width="">
+-->
  
   ## *iTaxi*  
 </div>
@@ -76,4 +78,6 @@ void todayMenu(Product *p); // 랜덤으로 오늘의 추천 메뉴 알려주는
  - 
  - 
 
-//<p align="center"><img src="" height="" width=""></p>
+<!--
+<p align="center"><img src="" height="" width=""></p>
+-->
