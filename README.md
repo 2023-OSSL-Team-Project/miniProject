@@ -26,8 +26,9 @@
 
 <br/>
 
-## 📟 CUBE KIOSK CRUD
+## 📟 iTaxi CRUD
 > 코드 및 기능
+<manager.h>
 ```c
 #include<stdio.h>
 #include<string.h>
@@ -49,7 +50,7 @@ int updateRecruit(Recruit *s); // 모집 수정 함수
 int deleteRecruit(Recruit *s);
 
 ```
-
+<product.h>
 ```c
 #include <stdio.h>
 #include "product.h"
