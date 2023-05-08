@@ -13,3 +13,4 @@ int searchDay(Recruit *s, int count); // 날짜 검색
 
 int editTime(Recruit *s, int count); // 시간, 날짜 수정
 int editPlace(Recruit *s, int count); // 지점 수정
+void updateMemo(Recruit *s, int count); // 추가 메모 작성
