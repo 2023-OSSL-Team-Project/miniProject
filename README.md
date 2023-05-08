@@ -93,8 +93,6 @@ void updateMemo(Recruit *s, int count); // 추가 메모 작성
  #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
   - README 파일 작성
   - 조회 파트 코드 구현
-  
-<br/>
 
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
  - Wiki 페이지 작성
