@@ -18,12 +18,15 @@
 <br/>
   
 ##  🚖 iTaxi가 가지고 있는 대략적인 기능 설명
+### 1.  작성자 모드  
   - 택시, 카풀 동승자 모집글 작성
-  - 모집글 전체 조회  
-  - 모집글 전체 수정  
-  - 모집글 부분 수정  
-  - 모집글 삭제 (삭제시 비밀번호 입력)  
-  - 모집글 출발 날짜 및 시간, 출발지 -> 도착지로 검색
+  - 작성한 글 전체 / 부분 선택하여 수정
+  - 모집 취소 (글 삭제시 작성할 때 적은 비밀번호 입력해야 삭제됨)
+### 2.  참여자 모드
+  - 모집 글 전체 조회
+  - 지점 검색
+  - 시간 / 날짜 검색
+  - 동승 참여 / 취소
 
 <br/>
 
@@ -92,11 +95,11 @@ void updateMemo(Recruit *s, int count); // 추가 메모 작성
 ### 팀원
  #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
   - README 파일 작성
-  - 조회 파트 코드 구현
+  - 참여자 모드 코드 구현
 
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
  - Wiki 페이지 작성
- - 모집 파트 코드 구현
+ - 작성자  코드 구현
 
 <!--
 <p align="center"><img src="" height="" width=""></p>
