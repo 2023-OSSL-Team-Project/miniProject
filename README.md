@@ -83,14 +83,14 @@ int editPlace(Recruit *s, int count); // 출발, 도착 지점 수정
 ## 🚖 팀소개 및 팀원이 맡은 역할
 ### 팀원
  #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
-  - 
-  - 
+  - README 파일 작성
+  - 조회 파트 코드 구현
   
 <br/>
 
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
- - 
- - 
+ - Wiki 페이지 작성
+ - 모집 파트 코드 구
 
 <!--
 <p align="center"><img src="" height="" width=""></p>
