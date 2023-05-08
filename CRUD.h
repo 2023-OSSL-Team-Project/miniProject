@@ -10,6 +10,7 @@ typedef struct{
 	char type; // 모집종류(T/C) (T: 택시, C: 카풀)
 	short int now_num; // 현재 모집된 인원
 	char memo[100]; // 메모
+	int pw; // 비밀번호(4자리 숫자)
 }Recruit;
 
 int createRecruit(Recruit *s); // 모집글 작성
