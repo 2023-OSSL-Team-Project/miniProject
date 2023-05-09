@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct{
 	char depart[20]; // 출발지
@@ -11,7 +12,7 @@ typedef struct{
 	short int now_num; // 현재 모집된 인원
 	char memo[100]; // 메모
 	int pw; // 비밀번호(4자리 숫자)
-}Recruit;
+} Recruit;
 
 int createRecruit(Recruit *s); // 모집글 작성
 void readRecruit(Recruit s); // 모집글  조회
