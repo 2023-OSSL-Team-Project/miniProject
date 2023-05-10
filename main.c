@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "CRUD.h"
+#include "extra.h"
 
 int main(void){
   Recruit *sp[20];
