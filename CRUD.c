@@ -88,3 +88,15 @@ int updateRecruit(Recruit *s){
   return 1;
 }
 
+int deleteRecruit(Recruit *s, int index){
+  short int password;
+  while(1){
+        printf("비밀번호 (4자리 숫자): ");
+        scanf("%hd", &password );
+        while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+        if(!(s->pw) == password) printf("비밀번호가 다릅니다.\n");
+        else break;
+  }
+  (s + index) -> date = -1;
+  return 1;
+}
