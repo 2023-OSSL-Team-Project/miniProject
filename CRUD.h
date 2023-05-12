@@ -17,7 +17,7 @@ typedef struct{
 int createRecruit(Recruit *s); // 모집글 작성
 void readRecruit(Recruit s); // 모집글  조회
 int updateRecruit(Recruit *s); // 모집글 전체 수정
-int deleteRecruit(Recruit *s); // 모집글 삭제
+int deleteRecruit(Recruit *s, int index); // 모집글 삭제
 
 int saveRecruit(Recruit *s, int count); // 파일 저장
 int loadRecruit(Recruit *s); // 파일 읽어오기
