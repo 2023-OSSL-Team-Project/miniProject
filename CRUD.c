@@ -164,3 +164,25 @@ int exitjoinRecruit(Recruit *s){ // 모집 참여 취소
   }
   return 0;
 }
+
+void searchPlace(Recruit *s[], int count){
+  int scnt = 0;
+  char search_d[20];
+  char search_a[20];
+  printf("출발지를 입력하세요. ");
+    scanf("%s", search_d);
+  printf("도착지를 입력하세요. ");
+    scanf("%s", search_a);
+    printf("\nNo 출발지 -> 도착지 출발날짜 출발시간 모집현황 모집종류\n");
+    printf("======================================================\n");
+  for(int i =0; i <count ; i++){
+    if(s[i]->type == -1) continue;
+    if(strstr(s[i]->depart, search_d) && strstr(s[i]->depart, search_a)){
+      printf("%2d ", i+1);
+      readRecruit(*s[i]);
+      scnt++;
+    }
+  }
+  if(scnt == 0) printf("=> 검색된 데이터 없음!");
+  printf("\n");
+}
