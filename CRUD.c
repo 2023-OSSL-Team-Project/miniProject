@@ -29,6 +29,7 @@ int createRecruit(Recruit *s){
   s->now_num = 1;
 
   printf("메모: ");
+  getchar(); // 입력버퍼 지움
   fgets(s -> memo, sizeof(s -> memo), stdin);
   s -> memo[strlen((s) -> memo) -1 ] = '\0';
 
