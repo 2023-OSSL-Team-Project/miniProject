@@ -25,7 +25,7 @@ int main(void){
 
     else if (menu == 2){
       sp[index]=(Recruit*)malloc(sizeof(Recruit));
-      count += addRecruit(sp[index++]);
+      count += createRecruit(sp[index++]);
     }
 
     else if (menu == 3){
@@ -50,7 +50,7 @@ int main(void){
       scanf("%d",&deleteok);
 
       if(deleteok == 1){
-                count -= deleteBrand(sp[0], no-1);
+                count -= deleteRecruit(sp[0], no-1);
                 printf("\n");
                 printf("=> 삭제됨!\n");
       }
