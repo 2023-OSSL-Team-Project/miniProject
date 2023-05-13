@@ -115,6 +115,7 @@ int selectMenu(){ // 메뉴 선택
     printf("5. 모집참여 ");
     printf("6. 모집참여취소 ");
     printf("7. 출발지->도착지검색 ");
+    printf("8. 출발검색 ");
     printf("0. 종료 >> ");
     scanf("%d", &menu);
     return menu;
@@ -181,6 +182,25 @@ void searchPlace(Recruit *s[], int count){
   for(int i =0; i <count ; i++){
     if(s[i]->type == -1) continue;
     if(strstr(s[i]->depart, search_d) && strstr(s[i]->depart, search_a)){
+      printf("%2d ", i+1);
+      readRecruit(*s[i]);
+      scnt++;
+    }
+  }
+  if(scnt == 0) printf("=> 검색된 데이터 없음!");
+  printf("\n");
+}
+
+void searchDay(Recruit *s[], int count){
+  int scnt = 0;
+  short int search;
+  printf("출발날짜를 입력하세요. ");
+    scanf("%hd", &search);
+    printf("\nNo 출발지 -> 도착지 출발날짜 출발시간 모집현황 모집종류\n");
+    printf("======================================================\n");
+  for(int i =0; i <count ; i++){
+    if(s[i]->type == -1) continue;
+    if(s[i]->date == search){
       printf("%2d ", i+1);
       readRecruit(*s[i]);
       scnt++;
