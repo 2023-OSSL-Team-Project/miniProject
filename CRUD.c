@@ -19,7 +19,7 @@ int createRecruit(Recruit *s){
 	while(1){
         printf("모집 인원 (2~4): ");
         scanf("%hd", &s->num);
-        if(&s->num < 2 || &s->num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
+        if(s->num < 2 || s->num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
         else break;
   }
 
@@ -36,7 +36,7 @@ int createRecruit(Recruit *s){
         printf("비밀번호 (4자리 숫자): ");
         scanf("%hd", &s->pw);
         while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-        if(&s->pw < 0 || &s->pw > 4) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+        if(s->pw < 0 || s->pw > 4) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
         else if(!(s->pw)) printf("숫자로 입력해주세요.");
         else break;
   }
@@ -68,7 +68,7 @@ int updateRecruit(Recruit *s){
   while(1){
         printf("모집 인원 (2~4): ");
         scanf("%hd", &s->num);
-        if(&s->num < 2 || &s->num > 4) printf("모집 인원은 2~4명이어야 합니다.\n");
+        if(s->num < 2 || s->num > 4) printf("모집 인원은 2~4명이어야 합니다.\n");
         else break;
   }
 
@@ -79,7 +79,7 @@ int updateRecruit(Recruit *s){
         printf("비밀번호 (4자리 숫자): ");
         scanf("%hd", &s->pw);
         while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-        if(&s->pw < 0 || &s->pw > 4) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+        if(s->pw < 0 || s->pw > 4) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
         else if(!(s->pw)) printf("숫자로 입력해주세요.");
         else break;
   }
@@ -94,7 +94,7 @@ int deleteRecruit(Recruit *s, int index){
         printf("비밀번호 (4자리 숫자): ");
         scanf("%hd", &password );
         while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-        if(!(s->pw) == password) printf("비밀번호가 다릅니다.\n");
+        if(s->pw != password) printf("비밀번호가 다릅니다.\n");
         else break;
   }
   (s + index) -> date = -1;
