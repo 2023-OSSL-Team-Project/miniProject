@@ -76,6 +76,10 @@ int main(void){
         printf("=> 모집에서 나갔습니다.\n");
     }
     
+     else if (menu == 7){
+      searchPlace(sp, count);
+    }
+    
     else return 0;
   }
   printf("종료됨!\n");
