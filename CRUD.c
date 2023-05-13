@@ -36,7 +36,7 @@ int createRecruit(Recruit *s){
         printf("비밀번호 (4자리 숫자): ");
         scanf("%hd", &s->pw);
         while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-        if(s->pw < 0 || s->pw > 4) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+        if(s->pw < 0 || s->pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
         else if(!(s->pw)) printf("숫자로 입력해주세요.");
         else break;
   }
