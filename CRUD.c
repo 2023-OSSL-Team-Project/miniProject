@@ -112,6 +112,7 @@ int selectMenu(){ // 메뉴 선택
     printf("4. 모집삭제 ");
     printf("5. 모집참여 ");
     printf("6. 모집참여취소 ");
+    printf("7. 출발지->도착지검색 ");
     printf("0. 종료 >> ");
     scanf("%d", &menu);
     return menu;
