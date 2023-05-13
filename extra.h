@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "CRUD.h"
 
 int selectMenu(); // 메뉴 선택
 
