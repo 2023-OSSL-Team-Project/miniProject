@@ -80,6 +80,10 @@ int main(void){
       searchPlace(sp, count);
     }
     
+    else if (menu == 8){
+      searchDay(sp, count);
+    }
+    
     else return 0;
   }
   printf("종료됨!\n");
