@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "extra.h"
+
 int selectMenu(){ // 메뉴 선택
     int menu;
     printf("\n*** iTaxi ***\n");
