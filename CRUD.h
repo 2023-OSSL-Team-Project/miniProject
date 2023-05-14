@@ -22,7 +22,8 @@ int deleteRecruit(Recruit *s, int index); // 모집글 삭제
 int saveRecruit(Recruit *s, int count); // 파일 저장
 int loadRecruit(Recruit *s); // 파일 읽어오기
 
-// extra.h
+// extra.h ==============================================
+
 int selectMenu(); // 메뉴 선택
 
 int selectDataNo(Recruit *s[], int count); // 데이터 번호 선택
