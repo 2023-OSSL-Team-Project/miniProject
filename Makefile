@@ -1,12 +1,9 @@
 CC = gcc
 CFLAGS = -W -Wall
 TARGET = itaxi
-OBJECTS = main.c libtaxi.a
+OBJECTS = main.o CRUD.o extra.o
 all : $(TARGET)
 $(TARGET) : $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^
-libtaxi.a : CRUD.o
-	ar rcv $@ $^
-	rm *.o
 clean :
-	rm *.o *.a itaxi
+	rm *.o itaxi

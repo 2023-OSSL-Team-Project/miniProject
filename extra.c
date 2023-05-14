@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "extra.h"
 
 int selectMenu(){ // 메뉴 선택
@@ -17,17 +14,17 @@ int selectMenu(){ // 메뉴 선택
     return menu;
 }
 
-void listRecruit(Recruit *s[], int count){ // 모집 리스트 출력
+void listRecruit(Recruit *s, int count){ // 모집 리스트 출력
   printf("\nNo 출발지 -> 도착지 출발날짜 출발시간 모집현황 모집종류\n");
   printf("======================================================\n");
   for(int i=0; i<count; i++){
-    if(s[i] == NULL) continue;
+    if(s[i].date == -1) continue;
     printf("%d  ",i+1);
-    readRecruit(*s[i]);
+    readRecruit(s[i]);
   }
 }
 
-int selectDataNo(Recruit *s[], int count){ // 데이터 번호 선택
+int selectDataNo(Recruit *s, int count){ // 데이터 번호 선택
   int no;
   listRecruit(s,count);
   printf("\n번호는 (취소 :0)? ");
@@ -63,4 +60,66 @@ int exitjoinRecruit(Recruit *s){ // 모집 참여 취소
     return 1;
   }
   return 0;
+}
+
+void searchPlace(Recruit *s, int count){
+
+    int scnt = 0;
+    char depart[20];
+    char arrive[20];
+
+    printf("검색할 출발지: ");
+    scanf("%s", arrive);
+
+    printf("검색할 도착지: ");
+    scanf("%s", depart);
+    
+    printf("=========================\n");
+    printf("\n");
+
+    for(int i = 0; i < count; i++){
+        if(s[i].date== -1) continue;
+
+        if(strstr(s[i].arrive, arrive) && strstr(s[i].depart, depart)){     
+            printf("NO.%2d\n", i+1);
+            printf("\n");
+            readRecruit(s[i]);
+            printf("\n");
+            printf("=========================\n");
+            printf("\n");
+            scnt++;
+        }
+    }
+
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
+
+void searchDay(Recruit *s, int count){
+
+    int scnt = 0;
+    short int search;
+
+    printf("검색할 시간: ");
+    scanf("%hd", &search);
+    
+    printf("=========================\n");
+    printf("\n");
+
+    for(int i = 0; i < count; i++){
+        if(s[i].date== -1) continue;
+
+        if(s[i].time == search){     
+            printf("NO.%2d\n", i+1);
+            printf("\n");
+            readRecruit(s[i]);
+            printf("\n");
+            printf("=========================\n");
+            printf("\n");
+            scnt++;
+        }
+    }
+
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
 }

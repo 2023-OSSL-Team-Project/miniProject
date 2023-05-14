@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "CRUD.h"
 
 int createRecruit(Recruit *s){
@@ -103,7 +100,7 @@ int deleteRecruit(Recruit *s, int index){
   return 1;
 }
 
-
+/*
 // extra.c
 int selectMenu(){ // 메뉴 선택
     int menu;
@@ -209,3 +206,4 @@ void searchDay(Recruit *s[], int count){
   if(scnt == 0) printf("=> 검색된 데이터 없음!");
   printf("\n");
 }
+*/
