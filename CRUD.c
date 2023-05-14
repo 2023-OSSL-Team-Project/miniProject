@@ -45,7 +45,7 @@ int createRecruit(Recruit *s){
 
 void readRecruit(Recruit s){
   printf("%s -> %s %04hd %04hd %hd/%hd %c\n", s.depart,s.arrive,s.date,s.time,s.now_num,s.num,s.type);
-  printf("메모 : %s\n", s.memo);
+  printf("   메모 : %s\n", s.memo);
 }
 
 int updateRecruit(Recruit *s){
