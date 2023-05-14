@@ -102,7 +102,7 @@ void searchDay(Recruit *s, int count){
     int scnt = 0;
     short int search;
 
-    printf("검색할 시간: ");
+    printf("검색할 날짜: ");
     scanf("%hd", &search);
     
     printf("=========================\n");
@@ -111,7 +111,7 @@ void searchDay(Recruit *s, int count){
     for(int i = 0; i < count; i++){
         if(s[i].date== -1) continue;
 
-        if(s[i].time == search){     
+        if(s[i].date == search){     
             printf("NO.%2d\n", i+1);
             printf("\n");
             readRecruit(s[i]);
