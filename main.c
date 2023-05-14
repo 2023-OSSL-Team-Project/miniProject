@@ -50,9 +50,9 @@ int main(void){
       scanf("%d",&deleteok);
 
       if(deleteok == 1){
-                count -= deleteBrand(sp[0], no-1);
-                printf("\n");
-                printf("=> 삭제됨!\n");
+        count -= deleteBrand(sp[0], no-1);
+        printf("\n");
+        printf("=> 삭제됨!\n");
       }
     }
 
@@ -75,7 +75,7 @@ int main(void){
       if(exitjoinRecruit(sp[no-1]) == 1)
         printf("=> 모집에서 나갔습니다.\n");
     }
-    
+
     else return 0;
   }
   printf("종료됨!\n");
