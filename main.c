@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "CRUD.h"
-//#include "extra.h"
+#include <string.h>
+
+#include "extra.h"
 
 int main(void){
   Recruit *sp[20];
@@ -20,7 +21,7 @@ int main(void){
 
     if (menu == 1){
       if (count > 0)
-        listRecruit(sp, index);
+        listRecruit(sp[0], index);
     }
 
     else if (menu == 2){
@@ -29,7 +30,7 @@ int main(void){
     }
 
     else if (menu == 3){
-      int no = selectDataNo(sp, index);
+      int no = selectDataNo(sp[0], index);
       if(no == 0){
         printf("취소됨!");
         continue;
@@ -38,7 +39,7 @@ int main(void){
     }
 
     else if (menu == 4){
-      int no = selectDataNo(sp, index);
+      int no = selectDataNo(sp[0], index);
       int deleteok;
 
       if(no == 0){
@@ -57,7 +58,7 @@ int main(void){
     }
 
     else if (menu == 5){
-      int no = selectDataNo(sp, index);
+      int no = selectDataNo(sp[0], index);
       if(no == 0){
         printf("취소됨!");
         continue;
@@ -67,7 +68,7 @@ int main(void){
     }
 
     else if (menu == 6){
-      int no = selectDataNo(sp, index);
+      int no = selectDataNo(sp[0], index);
       if(no == 0){
         printf("취소됨!");
         continue;
@@ -77,11 +78,11 @@ int main(void){
     }
     
      else if (menu == 7){
-      searchPlace(sp, count);
+      searchPlace(sp[0], count);
     }
     
     else if (menu == 8){
-      searchDay(sp, count);
+      searchDay(sp[0], count);
     }
     
     else return 0;
