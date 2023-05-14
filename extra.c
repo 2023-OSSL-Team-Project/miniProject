@@ -71,10 +71,10 @@ void searchPlace(Recruit *s, int count){
     char arrive[20];
 
     printf("검색할 출발지: ");
-    scanf("%s", arrive);
+    scanf("%s", depart);
 
     printf("검색할 도착지: ");
-    scanf("%s", depart);
+    scanf("%s", arrive);
     
     printf("=========================\n");
     printf("\n");
@@ -82,7 +82,7 @@ void searchPlace(Recruit *s, int count){
     for(int i = 0; i < count; i++){
         if(s[i].date== -1) continue;
 
-        if(strstr(s[i].arrive, arrive) && strstr(s[i].depart, depart)){     
+        if(strstr(s[i].depart, depart) && strstr(s[i].arrive, arrive)){     
             printf("NO.%2d\n", i+1);
             printf("\n");
             readRecruit(s[i]);
