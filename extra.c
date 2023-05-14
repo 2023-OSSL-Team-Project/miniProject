@@ -70,10 +70,10 @@ void searchPlace(Recruit *s, int count){
     char depart[20];
     char arrive[20];
 
-    printf("검색할 출발지: ");
+    printf("검색할 출발지 ");
     scanf("%s", depart);
 
-    printf("검색할 도착지: ");
+    printf("검색할 도착지 ");
     scanf("%s", arrive);
     
     printf("=========================\n");
@@ -102,7 +102,7 @@ void searchDay(Recruit *s, int count){
     int scnt = 0;
     short int search;
 
-    printf("검색할 날짜: ");
+    printf("검색할 날짜(예, 0326) ");
     scanf("%hd", &search);
     
     printf("=========================\n");
