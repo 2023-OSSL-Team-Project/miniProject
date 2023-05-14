@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "CRUD.h"
-#include "extra.h"
+//#include "extra.h"
 
 int main(void){
   Recruit *sp[20];
@@ -25,7 +25,7 @@ int main(void){
 
     else if (menu == 2){
       sp[index]=(Recruit*)malloc(sizeof(Recruit));
-      count += addRecruit(sp[index++]);
+      count += createRecruit(sp[index++]);
     }
 
     else if (menu == 3){
@@ -50,9 +50,9 @@ int main(void){
       scanf("%d",&deleteok);
 
       if(deleteok == 1){
-        count -= deleteBrand(sp[0], no-1);
-        printf("\n");
-        printf("=> 삭제됨!\n");
+                count -= deleteRecruit(sp[0], no-1);
+                printf("\n");
+                printf("=> 삭제됨!\n");
       }
     }
 
@@ -75,7 +75,15 @@ int main(void){
       if(exitjoinRecruit(sp[no-1]) == 1)
         printf("=> 모집에서 나갔습니다.\n");
     }
-
+    
+     else if (menu == 7){
+      searchPlace(sp, count);
+    }
+    
+    else if (menu == 8){
+      searchDay(sp, count);
+    }
+    
     else return 0;
   }
   printf("종료됨!\n");
