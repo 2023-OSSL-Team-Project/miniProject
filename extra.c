@@ -102,7 +102,7 @@ void searchDay(Recruit *s, int count){
     int scnt = 0;
     short int search;
 
-    printf("검색할 날짜(예, 0326) ");
+    printf("검색할 날짜 (예, 0326) ");
     scanf("%hd", &search);
     
     printf("=========================\n");
