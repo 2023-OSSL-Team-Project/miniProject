@@ -14,9 +14,9 @@ typedef struct{
 	short int pw; // 비밀번호(4자리 숫자)
 } Recruit;
 
-int createRecruit(Recruit *s); // 모집글 작성
+int createRecruit(Recruit *s, int index); // 모집글 작성
 void readRecruit(Recruit s); // 모집글  조회
-int updateRecruit(Recruit *s); // 모집글 전체 수정
+int updateRecruit(Recruit *s, int index); // 모집글 전체 수정
 int deleteRecruit(Recruit *s, int index); // 모집글 삭제
 
 int saveRecruit(Recruit *s, int count); // 파일 저장
