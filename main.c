@@ -6,7 +6,7 @@
 
 int main(void){
   Recruit *sp[20];
-  int count = 0, menu; //count : 데이터 개수
+  int count = 0, main, menu1, menu2; //count : 데이터 개수
   int index = 0; // 데이터 번호
   
   printf("\n");
@@ -21,104 +21,119 @@ int main(void){
   printf("\n");
 
   while (1){
-    menu = selectMenu();
-    if (menu == 0){
+    main = selectMenu_main();
+    if (main == 0){
       int exitok;
       printf("\n=> 종료하시겠습니까? (종료 : 0) ");
       scanf("%d",&exitok);
       if(exitok == 0) break;
     }
-
-    if (menu == 1){
-      if (count > 0)
-        listRecruit(sp[0], index);
+    
+    else if (main == 1){
+      menu1 = selectMenu1()
+      if (menu1 == 1){
+        if (count > 0)
+          listRecruit(sp[0], index);
+      
+        else if (menu1 == 2){
+          int no = selectDataNo(sp[0], index);
+  
+          if(no == 0){
+            printf("취소됨!");
+            continue;
+          }
+  
+          if(joinRecruit(sp[no-1]) == 1)
+            printf("=> 모집에 참여되었습니다.\n");
+        }
+  
+        else if (menu1 == 3){
+          int no = selectDataNo(sp[0], index);
+  
+          if(no == 0){
+            printf("취소됨!");
+            continue;
+          }
+  
+          if(exitjoinRecruit(sp[no-1]) == 1)
+            printf("=> 모집에서 나갔습니다.\n");
+        }
+  
+        else if (menu1 == 7){
+          searchPlace(sp[0], index);
+        }
+  
+        else if (menu1 == 8){
+          searchDay(sp[0], index);
+        }
+          
+        else if (menu1 == 0){
+          continue;
+        }
+          
+        else return 0;
+      }
     }
 
-    else if (menu == 2){
-      sp[index]=(Recruit*)malloc(sizeof(Recruit));
-      count += createRecruit(sp[0], index);
+    else if (main == 2){
+      menu2 = selectMenu2()
 
-      if(&sp[0] == NULL){
-        exit(1);
+      if (menu2 == 1){
+        sp[index]=(Recruit*)malloc(sizeof(Recruit));
+        count += createRecruit(sp[0], index);
+  
+        if(&sp[0] == NULL){
+          exit(1);
+        }
+  
+        printf("=> 추가됨!\n");
+        index++;
       }
 
-      printf("=> 추가됨!\n");
-      index++;
-    }
-
-    else if (menu == 3){
-      int no = selectDataNo(sp[0], index);
-
-      if(no == 0){
-        printf("취소됨!");
-        continue;
+      else if (menu == 2){
+        int no = selectDataNo(sp[0], index);
+  
+        if(no == 0){
+          printf("취소됨!");
+          continue;
+        }
+  
+        int a = updateRecruit(sp[0], no-1);
+        if(a == 1) printf("=> 수정성공!\n");
+      }
+  
+      else if (menu == 3){
+        int no = selectDataNo(sp[0], index);
+        int deleteok;
+  
+        if(no == 0){
+          printf("취소됨!");
+          continue;
+        }
+        
+        printf("정말로 삭제하시겠습니까?(삭제 :1) ");
+        scanf("%d",&deleteok);
+  
+        if(deleteok == 1){
+          count -= deleteRecruit(sp[0], no-1);
+          sp[no-1] = NULL;
+          printf("\n");
+          printf("=> 삭제됨!\n");
+        }
+      }
+  
+      else if(menu == 4){
+        int no = selectDataNo(sp[0], index);
+        updateMemo(sp[0], no - 1);
+        printf("\n");
+        printf("=> 저장됨!!\n");
       }
 
-      int a = updateRecruit(sp[0], no-1);
-      if(a == 1) printf("=> 수정성공!\n");
-    }
-
-    else if (menu == 4){
-      int no = selectDataNo(sp[0], index);
-      int deleteok;
-
-      if(no == 0){
-        printf("취소됨!");
+      else if (menu1 == 0){
         continue;
       }
       
-      printf("정말로 삭제하시겠습니까?(삭제 :1) ");
-      scanf("%d",&deleteok);
-
-      if(deleteok == 1){
-        count -= deleteRecruit(sp[0], no-1);
-        sp[no-1] = NULL;
-        printf("\n");
-        printf("=> 삭제됨!\n");
-      }
+      else return 0;
     }
-
-    else if (menu == 5){
-      int no = selectDataNo(sp[0], index);
-
-      if(no == 0){
-        printf("취소됨!");
-        continue;
-      }
-
-      if(joinRecruit(sp[no-1]) == 1)
-        printf("=> 모집에 참여되었습니다.\n");
-    }
-
-    else if (menu == 6){
-      int no = selectDataNo(sp[0], index);
-
-      if(no == 0){
-        printf("취소됨!");
-        continue;
-      }
-
-      if(exitjoinRecruit(sp[no-1]) == 1)
-        printf("=> 모집에서 나갔습니다.\n");
-    }
-    
-     else if (menu == 7){
-      searchPlace(sp[0], index);
-    }
-    
-    else if (menu == 8){
-      searchDay(sp[0], index);
-    }
-
-    else if(menu == 9){
-      int no = selectDataNo(sp[0], index);
-      updateMemo(sp[0], no - 1);
-      printf("\n");
-      printf("=> 저장됨!!\n");
-        }
-    
-    else return 0;
   }
-  printf("종료됨!\n");
-  return 0;
 }
