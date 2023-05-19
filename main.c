@@ -90,7 +90,7 @@ int main(void){
         index++;
       }
 
-      else if (menu == 2){
+      else if (menu2 == 2){
         int no = selectDataNo(sp[0], index);
   
         if(no == 0){
@@ -102,7 +102,7 @@ int main(void){
         if(a == 1) printf("=> 수정성공!\n");
       }
   
-      else if (menu == 3){
+      else if (menu2 == 3){
         int no = selectDataNo(sp[0], index);
         int deleteok;
   
@@ -122,14 +122,14 @@ int main(void){
         }
       }
   
-      else if(menu == 4){
+      else if(menu2 == 4){
         int no = selectDataNo(sp[0], index);
         updateMemo(sp[0], no - 1);
         printf("\n");
         printf("=> 저장됨!!\n");
       }
 
-      else if (menu1 == 0){
+      else if (menu2 == 0){
         continue;
       }
       
