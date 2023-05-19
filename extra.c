@@ -3,7 +3,18 @@
 int selectMenu(){ // 메뉴 선택
     int menu;
 
-    printf("\n*** iTaxi ***\n");
+
+    printf("\n");
+    printf("     +--------------+\n");
+    printf("     |              |\n");
+    printf("  +---    ITAXI     ---+\n");
+    printf(" |                     |  == ** *\n");
+    printf(" ----------------------\n");
+    printf("     ***         ***\n");
+    printf("\n");
+    printf("\n*** iTaxi Menu***\n");
+    printf("\n");
+
     printf("1. 조회\n");
     printf("2. 모집\n");
     printf("3. 모집정보수정\n");
@@ -25,7 +36,7 @@ void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
     printf("=========================\n");
     printf("\n");
     for(int i = 0; i < index; i++){
-        if(s[i].date == -1) continue;
+        //if(s[i].date == -1) continue;
         printf("NO.%2d\n", i+1);
         printf("\n");
         readRecruit(s[i]);
