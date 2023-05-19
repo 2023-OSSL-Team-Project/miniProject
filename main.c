@@ -6,7 +6,7 @@
 
 int main(void){
   Recruit *sp[20];
-  int count = 0, main, menu1, menu2; //count : 데이터 개수
+  int count = 0, main0, menu1, menu2; //count : 데이터 개수
   int index = 0; // 데이터 번호
   
   printf("\n");
@@ -21,7 +21,7 @@ int main(void){
   printf("\n");
 
   while (1){
-    main = selectMenu_main();
+    main0 = selectMenu_main();
     if (main == 0){
       int exitok;
       printf("\n=> 종료하시겠습니까? (종료 : 0) ");
@@ -29,7 +29,7 @@ int main(void){
       if(exitok == 0) break;
     }
     
-    else if (main == 1){
+    else if (main0 == 1){
       menu1 = selectMenu1()
       if (menu1 == 1){
         if (count > 0)
@@ -75,7 +75,7 @@ int main(void){
       }
     }
 
-    else if (main == 2){
+    else if (main0 == 2){
       menu2 = selectMenu2()
 
       if (menu2 == 1){
