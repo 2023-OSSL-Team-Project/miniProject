@@ -1,9 +1,8 @@
 #include "extra.h"
 
-int selectMenu(){ // 메뉴 선택
-    int menu;
-
-
+int selectMenu_main(){ // 메인화면 메뉴 선택
+    int main0;
+    
     printf("\n");
     printf("     +--------------+\n");
     printf("     |              |\n");
@@ -14,22 +13,45 @@ int selectMenu(){ // 메뉴 선택
     printf("\n");
     printf("\n*** iTaxi Menu***\n");
     printf("\n");
-
+    
     printf("1. 조회\n");
     printf("2. 모집\n");
-    printf("3. 모집정보수정\n");
-    printf("4. 모집삭제\n");
-    printf("5. 모집참여\n");
-    printf("6. 모집참여취소\n");
-    printf("7. 장소 검색\n");
-    printf("8. 시간 검색\n");
-    printf("9. 메모 추가\n");
     printf("0. 종료\n");
-
     printf("\n원하는 메뉴는? ");
+    scanf("%d", &main0);
+    
+    return main0;
+}
 
-    scanf("%d", &menu);
-    return menu;
+int selectMenu1(){ // 조회 메뉴 선택
+    int manu1;
+    
+    printf("\n< 조회 >\n");
+    printf("1. 모집조회\n");
+    printf("2. 모집참여\n");
+    printf("3. 모집참여취소\n");
+    printf("4. 장소검색\n");
+    printf("5. 시간검색\n");
+    printf("0. 뒤로가기\n");
+    printf("\n원하는 메뉴는? ");
+    scanf("%d", &manu1);
+    
+    return manu1;
+}
+
+int selectMenu2(){ // 모집 메뉴 선택
+    int manu2;
+    
+    printf("\n< 모집 >\n");
+    printf("1. 모집글 작성\n");
+    printf("2. 모집정보수정\n");
+    printf("3. 모집삭제\n");
+    printf("4. 메모 추가\n");
+    printf("0. 뒤로가기\n");
+    printf("\n원하는 메뉴는? ");
+    scanf("%d", &manu2);
+    
+    return manu2;
 }
 
 void listRecruit(Recruit *s, int index){ // 모집 리스트 출력

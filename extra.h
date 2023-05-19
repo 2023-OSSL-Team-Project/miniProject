@@ -3,7 +3,10 @@
 #include <string.h>
 #include "CRUD.h"
 
-int selectMenu(); // 메뉴 선택
+int selectMenu_main(); // 메인화면 메뉴 선택
+int selectMenu1(); // 조회 메뉴 선택
+int selectMenu2(); // 모집 메뉴 선택
+
 
 int selectDataNo(Recruit *s, int count); // 데이터 번호 선택
 void listRecruit(Recruit *s, int count); // 모집 리스트 출력
