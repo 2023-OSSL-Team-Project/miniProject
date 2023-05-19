@@ -10,7 +10,7 @@ int createRecruit(Recruit *s, int i){
 	printf("출발날짜 (예, 0522): ");
   scanf("%hd", &(s+i)->date);
   
-	printf("출발시간 (예, 1940): ₩1");
+	printf("출발시간 (예, 1940): ");
   scanf("%hd", &(s+i)->time);
   
 	while(1){
@@ -20,7 +20,7 @@ int createRecruit(Recruit *s, int i){
         else break;
   }
 
-  printf("모집종류 (택시 : T, 카풀 : C: ");
+  printf("모집종류 (택시 : T, 카풀 : C) ");
   scanf(" %c", &s->type);
   
   s->now_num = 1;
