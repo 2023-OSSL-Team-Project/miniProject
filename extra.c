@@ -42,7 +42,7 @@ int selectMenu1(){ // 조회 메뉴 선택
 int selectMenu2(){ // 모집 메뉴 선택
     int manu2;
     
-    printf("\n<  >\n");
+    printf("\n< 모집 >\n");
     printf("1. 모집글 작성\n");
     printf("2. 모집정보수정\n");
     printf("3. 모집삭제\n");
