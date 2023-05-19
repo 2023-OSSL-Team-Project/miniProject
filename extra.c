@@ -8,6 +8,8 @@ int selectMenu_main(){ // 메인화면 메뉴 선택
     printf("0. 종료\n");
     printf("\n원하는 메뉴는? ");
     scanf("%d", &main0);
+    
+    return main0;
 }
 
 int selectMenu1(){ // 조회 메뉴 선택
@@ -21,6 +23,8 @@ int selectMenu1(){ // 조회 메뉴 선택
     printf("0. 뒤로가기\n");
     printf("\n원하는 메뉴는? ");
     scanf("%d", &manu1);
+    
+    return manu1;
 }
 
 int selectMenu2(){ // 모집 메뉴 선택
@@ -32,6 +36,8 @@ int selectMenu2(){ // 모집 메뉴 선택
     printf("0. 뒤로가기\n");
     printf("\n원하는 메뉴는? ");
     scanf("%d", &manu2);
+    
+    return manu2;
 }
 
 void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
