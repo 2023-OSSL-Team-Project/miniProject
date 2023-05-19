@@ -19,7 +19,7 @@ int main(void){
     }
     
     else if (main0 == 1){
-      while (1)
+      while (1){
         menu1 = selectMenu1();
         if (menu1 == 1){
           if (count > 0)
