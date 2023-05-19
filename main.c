@@ -34,45 +34,45 @@ int main(void){
       if (menu1 == 1){
         if (count > 0)
           listRecruit(sp[0], index);
+      }
       
-        else if (menu1 == 2){
-          int no = selectDataNo(sp[0], index);
-  
-          if(no == 0){
-            printf("취소됨!");
-            continue;
-          }
-  
-          if(joinRecruit(sp[no-1]) == 1)
-            printf("=> 모집에 참여되었습니다.\n");
-        }
-  
-        else if (menu1 == 3){
-          int no = selectDataNo(sp[0], index);
-  
-          if(no == 0){
-            printf("취소됨!");
-            continue;
-          }
-  
-          if(exitjoinRecruit(sp[no-1]) == 1)
-            printf("=> 모집에서 나갔습니다.\n");
-        }
-  
-        else if (menu1 == 7){
-          searchPlace(sp[0], index);
-        }
-  
-        else if (menu1 == 8){
-          searchDay(sp[0], index);
-        }
-          
-        else if (menu1 == 0){
+      else if (menu1 == 2){
+        int no = selectDataNo(sp[0], index);
+
+        if(no == 0){
+          printf("취소됨!");
           continue;
         }
-          
-        else return 0;
+
+        if(joinRecruit(sp[no-1]) == 1)
+          printf("=> 모집에 참여되었습니다.\n");
       }
+
+      else if (menu1 == 3){
+        int no = selectDataNo(sp[0], index);
+
+        if(no == 0){
+          printf("취소됨!");
+          continue;
+        }
+
+        if(exitjoinRecruit(sp[no-1]) == 1)
+          printf("=> 모집에서 나갔습니다.\n");
+      }
+
+      else if (menu1 == 7){
+        searchPlace(sp[0], index);
+      }
+
+      else if (menu1 == 8){
+        searchDay(sp[0], index);
+      }
+        
+      else if (menu1 == 0){
+        continue;
+      }
+        
+      else return 0;
     }
 
     else if (main0 == 2){
