@@ -1,16 +1,16 @@
 #include "CRUD.h"
 
 int createRecruit(Recruit *s, int i){
-  printf("\n출발지 입력 ");
+  printf("\n출발지 입력: ");
 	scanf("%s", (s+i)->depart);
   
-	printf("도착지 입력 ");
+	printf("도착지 입력: ");
 	scanf("%s", (s+i)->arrive );
   
-	printf("출발날짜 (예, 0326) ");
+	printf("출발날짜 (예, 0522): ");
   scanf("%hd", &(s+i)->date);
   
-	printf("출발시간 (예, 1940) ");
+	printf("출발시간 (예, 1940): ₩1");
   scanf("%hd", &(s+i)->time);
   
 	while(1){
@@ -20,7 +20,7 @@ int createRecruit(Recruit *s, int i){
         else break;
   }
 
-  printf("모집종류 (택시 : T, 카풀 : C) ");
+  printf("모집종류 (택시 : T, 카풀 : C: ");
   scanf(" %c", &s->type);
   
   s->now_num = 1;
@@ -52,20 +52,17 @@ void readRecruit(Recruit s){
 }
 
 int updateRecruit(Recruit *s, int i){
-  printf("\n출발지 입력 ");
+  printf("\n출발지 입력: ");
   scanf("%s", (s+i)->depart);
 
-  printf("도착지 입력 ");
+  printf("도착지 입력: ");
   scanf("%s", (s+i)->arrive );
 
-  printf("출발날짜 (예, 0326) ");
+  printf("출발날짜 (예, 0522): ");
   scanf("%04hd", &(s+i)->date);
 
-  printf("출발시간 (예, 1940) ");
+  printf("출발시간 (예, 1940): ");
   scanf("%04hd", &(s+i)->time);
-
-  printf("모집인원 (2~4) ");
-  scanf("%hd", &(s+i)->num);
   
   while(1){
         printf("모집 인원 (2~4): ");
@@ -74,8 +71,15 @@ int updateRecruit(Recruit *s, int i){
         else break;
   }
 
-  printf("모집종류 (택시 : T, 카풀 : C) ");
+  printf("모집종류 (택시 : T, 카풀 : C): ");
   scanf(" %c", &(s+i)->type);
+
+  s->now_num = 1;
+
+  printf("메모(없으면 엔터 입력): ");
+  getchar(); // 입력버퍼 지움
+  fgets((s+i)-> memo, sizeof((s+i) -> memo), stdin);
+  (s+i) -> memo[strlen((s+i) -> memo) -1 ] = '\0';
 
   while(1){
         printf("비밀번호 (4자리 숫자): ");
@@ -99,7 +103,7 @@ int deleteRecruit(Recruit *s, int i){
         if(s->pw != password) printf("비밀번호가 다릅니다.\n");
         else break;
   }
+  if(s+i) free(s+i);
 
-  (s + i) -> date = -1;
   return 1;
 }
