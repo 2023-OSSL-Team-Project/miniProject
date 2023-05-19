@@ -55,7 +55,7 @@ int selectMenu2(){ // 모집 메뉴 선택
 }
 
 void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
-    printf("=========================\n");
+    printf("=============================\n");
     printf("\n");
     for(int i = 0; i < index; i++){
         //if(s[i].date == -1) continue;
@@ -63,7 +63,7 @@ void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
         printf("\n");
         readRecruit(s[i]);
         printf("\n");
-        printf("=========================\n");
+        printf("=============================\n");
         printf("\n");
     }
 }
