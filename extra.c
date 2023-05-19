@@ -2,7 +2,18 @@
 
 int selectMenu_main(){ // 메인화면 메뉴 선택
     int main0;
-
+    
+    printf("\n");
+    printf("     +--------------+\n");
+    printf("     |              |\n");
+    printf("  +---    ITAXI     ---+\n");
+    printf(" |                     |  == ** *\n");
+    printf(" ----------------------\n");
+    printf("     ***         ***\n");
+    printf("\n");
+    printf("\n*** iTaxi Menu***\n");
+    printf("\n");
+    
     printf("1. 조회\n");
     printf("2. 모집\n");
     printf("0. 종료\n");
