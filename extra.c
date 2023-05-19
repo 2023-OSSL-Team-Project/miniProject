@@ -46,6 +46,7 @@ int selectMenu2(){ // 모집 메뉴 선택
     printf("1. 모집글 작성\n");
     printf("2. 모집정보수정\n");
     printf("3. 모집삭제\n");
+    printf("4. 메모 추가\n");
     printf("0. 뒤로가기\n");
     printf("\n원하는 메뉴는? ");
     scanf("%d", &manu2);
