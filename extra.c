@@ -1,23 +1,13 @@
 #include "extra.h"
 
-int selectMenu(){ // 메뉴 선택
-    int menu;
+int selectMenu_main(){ // 메뉴 선택
+    int main;
 
     printf("1. 조회\n");
     printf("2. 모집\n");
-    printf("3. 모집정보수정\n");
-    printf("4. 모집삭제\n");
-    printf("5. 모집참여\n");
-    printf("6. 모집참여취소\n");
-    printf("7. 장소 검색\n");
-    printf("8. 시간 검색\n");
-    printf("9. 메모 추가\n");
     printf("0. 종료\n");
-
     printf("\n원하는 메뉴는? ");
-
-    scanf("%d", &menu);
-    return menu;
+    scanf("%d", &main);
 }
 
 void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
