@@ -8,17 +8,6 @@ int main(void){
   Recruit *sp[20];
   int count = 0, main0, menu1, menu2; //count : 데이터 개수
   int index = 0; // 데이터 번호
-  
-  printf("\n");
-  printf("     +--------------+\n");
-  printf("     |              |\n");
-  printf("  +---    ITAXI     ---+\n");
-  printf(" |                     |  == ** *\n");
-  printf(" ----------------------\n");
-  printf("     ***         ***\n");
-  printf("\n");
-  printf("\n*** iTaxi Menu***\n");
-  printf("\n");
 
   while (1){
     main0 = selectMenu_main();
