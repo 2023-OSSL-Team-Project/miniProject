@@ -62,6 +62,7 @@ int main(void){
 
       if(deleteok == 1){
         count -= deleteRecruit(sp[0], no-1);
+        sp[no-1] = NULL;
         printf("\n");
         printf("=> 삭제됨!\n");
       }
