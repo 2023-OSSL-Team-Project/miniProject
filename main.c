@@ -34,6 +34,8 @@ int main(void){
       if (menu1 == 1){
         if (count > 0)
           listRecruit(sp[0], index);
+        else
+          printf("조회된 내용이 없습니다.\n");
       }
       
       else if (menu1 == 2){
