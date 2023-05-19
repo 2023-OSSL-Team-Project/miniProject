@@ -25,7 +25,7 @@ int main(void){
           if (count > 0)
             listRecruit(sp[0], index);
           else
-            printf("=> 조회된 데이터 없음!\n\");
+            printf("=> 조회된 데이터 없음!\n");
         }
 
         else if (menu1 == 2){
