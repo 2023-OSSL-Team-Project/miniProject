@@ -25,7 +25,8 @@ int selectMenu_main(){ // 메인화면 메뉴 선택
 
 int selectMenu1(){ // 조회 메뉴 선택
     int manu1;
-
+    
+    printf("\n< 조회 >\n");
     printf("1. 모집조회\n");
     printf("2. 모집참여\n");
     printf("3. 모집참여취소\n");
@@ -40,7 +41,8 @@ int selectMenu1(){ // 조회 메뉴 선택
 
 int selectMenu2(){ // 모집 메뉴 선택
     int manu2;
-
+    
+    printf("\n<  >\n");
     printf("1. 모집글 작성\n");
     printf("2. 모집정보수정\n");
     printf("3. 모집삭제\n");
