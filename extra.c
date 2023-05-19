@@ -1,13 +1,13 @@
 #include "extra.h"
 
 int selectMenu_main(){ // 메인화면 메뉴 선택
-    int main;
+    int main0;
 
     printf("1. 조회\n");
     printf("2. 모집\n");
     printf("0. 종료\n");
     printf("\n원하는 메뉴는? ");
-    scanf("%d", &main);
+    scanf("%d", &main0);
 }
 
 int selectMenu1(){ // 조회 메뉴 선택
