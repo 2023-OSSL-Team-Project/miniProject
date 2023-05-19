@@ -33,7 +33,7 @@ int main(void){
 
           if(no == 0){
             printf("취소됨!");
-            break;
+            continue;
           }
 
           if(joinRecruit(sp[no-1]) == 1)
@@ -61,7 +61,7 @@ int main(void){
         }
 
         else if (menu1 == 0){
-          continue;
+          break;
         }
 
         else return 0;
