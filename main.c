@@ -22,7 +22,7 @@ int main(void){
 
   while (1){
     main0 = selectMenu_main();
-    if (main == 0){
+    if (main0 == 0){
       int exitok;
       printf("\n=> 종료하시겠습니까? (종료 : 0) ");
       scanf("%d",&exitok);
@@ -30,7 +30,7 @@ int main(void){
     }
     
     else if (main0 == 1){
-      menu1 = selectMenu1()
+      menu1 = selectMenu1();
       if (menu1 == 1){
         if (count > 0)
           listRecruit(sp[0], index);
@@ -76,7 +76,7 @@ int main(void){
     }
 
     else if (main0 == 2){
-      menu2 = selectMenu2()
+      menu2 = selectMenu2();
 
       if (menu2 == 1){
         sp[index]=(Recruit*)malloc(sizeof(Recruit));
