@@ -52,11 +52,11 @@ int main(void){
             printf("=> 모집에서 나갔습니다.\n");
         }
 
-        else if (menu1 == 7){
+        else if (menu1 == 4){
           searchPlace(sp[0], index);
         }
 
-        else if (menu1 == 8){
+        else if (menu1 == 5){
           searchDay(sp[0], index);
         }
 
