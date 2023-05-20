@@ -6,11 +6,16 @@
 
 int main(void){
   Recruit *sp[20];
+  *sp = (Recruit*)malloc(100 * sizeof(Recruit));
   int count = 0, main0, menu1, menu2; //count : 데이터 개수
   int index = 0; // 데이터 번호
 
+  count = loadData(sp[0]);
+  index = count;
+
   while (1){
     main0 = selectMenu_main();
+
     if (main0 == 0){
       int exitok;
       printf("\n=> 종료하시겠습니까? (종료 : 0) ");
@@ -20,24 +25,25 @@ int main(void){
     
     else if (main0 == 1){
       while (1){
+
+      if (count <= 0){
+        printf("\n=>아직 모집 중인 글이 없습니다.\n");
+        break;
+      }
+
+      else{
         menu1 = selectMenu1();
-        if (menu1 == 1){
-          if (count > 0)
+
+        if (menu1 == 1)
             listRecruit(sp[0], index);
-          else
-            printf("=> 조회된 데이터 없음!\n");
-        }
 
         else if (menu1 == 2){
           int no = selectDataNo(sp[0], index);
-
-          if(no == 0){
-            printf("취소됨!");
-            continue;
-          }
-
-          if(joinRecruit(sp[no-1]) == 1)
-            printf("=> 모집에 참여되었습니다.\n");
+            if(no == 0){
+              printf("취소됨!");
+              continue;
+            }
+            if(joinRecruit(sp[0], no-1) == 1) printf("=> 모집에 참여되었습니다.\n");
         }
 
         else if (menu1 == 3){
@@ -48,7 +54,7 @@ int main(void){
             continue;
           }
 
-          if(exitjoinRecruit(sp[no-1]) == 1)
+          if(exitjoinRecruit(sp[0], no-1) == 1)
             printf("=> 모집에서 나갔습니다.\n");
         }
 
@@ -65,15 +71,15 @@ int main(void){
         }
 
         else return 0;
-      }
+        }
+       }
     }
-
+    
     else if (main0 == 2){
       while (1){
         menu2 = selectMenu2();
 
         if (menu2 == 1){
-          sp[index]=(Recruit*)malloc(sizeof(Recruit));
           count += createRecruit(sp[0], index);
 
           if(&sp[0] == NULL){
@@ -130,5 +136,11 @@ int main(void){
         else return 0;
       }
     }
+
+    else if (main0 == 3){
+      saveData(sp[0], index);
+    }
   }
+  free(*sp);
+  return 0;
 }
