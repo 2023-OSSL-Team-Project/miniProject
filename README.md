@@ -35,51 +35,167 @@
   
 <CRUD.h>
 ```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-typedef struct{
-	char depart[20]; // 출발지
-	char arrive[20]; // 도착지
-	short int date; // 출발날짜 (예, 0326)
-	short int time; // 출발시간 (예, 1940)
-	short int num; // 모집인원
-	char type; // 모집종류(T/C) (T: 택시, C: 카풀)
-	short int now_num; // 현재 모집된 인원
-	char memo[100]; // 메모
-	short int pw; // 비밀번호(4자리 숫자)
-} Recruit;
-
-int createRecruit(Recruit *s); // 모집글 작성
-void readRecruit(Recruit s); // 모집글  조회
-int updateRecruit(Recruit *s); // 모집글 전체 수정
-int deleteRecruit(Recruit *s, int index); // 모집글 삭제
-
-int saveRecruit(Recruit *s, int count); // 파일 저장
-int loadRecruit(Recruit *s); // 파일 읽어오기
-
-```
-<extra.h>
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "CRUD.h"
 
-int selectMenu(); // 메뉴 선택
+int createRecruit(Recruit *s, int i){
 
-int selectDataNo(Recruit *s, int count); // 데이터 번호 선택
-void listRecruit(Recruit *s, int count); // 모집 리스트 출력
+  printf("\n출발지 입력: ");
+	scanf("%s", (s+i)->depart);
+  
+	printf("도착지 입력: ");
+	scanf("%s", (s+i)->arrive );
+  
+	printf("출발날짜 (예, 0522): ");
+  scanf("%hd", &(s+i)->date);
+  
+	printf("출발시간 (예, 1940): ");
+  scanf("%hd", &(s+i)->time);
+  
+	while(1){
+        printf("모집 인원 (2~4): ");
+        scanf("%hd", &(s+i)->num);
+        if((s+i)->num < 2 || (s+i)->num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
+        else break;
+  }
 
-int joinRecruit(Recruit *s); // 모집 참여
-int exitjoinRecruit(Recruit *s); // 모집 참여 취소 
-void searchPlace(Recruit *s, int count); // 지점 검색
-void searchDay(Recruit *s, int count); // 날짜 검색
+  printf("모집종류 (택시 : T, 카풀 : C): ");
+  scanf(" %c", &(s+i)->type);
+  
+  (s+i)->now_num = 1;
 
-int editTime(Recruit *s, int count); // 시간, 날짜 수정
-int editPlace(Recruit *s, int count); // 지점 수정
-void updateMemo(Recruit *s, int count); // 추가 메모 작성
+  printf("메모(없으면 엔터): ");
+  getchar(); // 입력버퍼 지움
+  fgets((s+i)-> memo, sizeof((s+i) -> memo), stdin);
+  (s+i) -> memo[strlen((s+i) -> memo) -1 ] = '\0';
+
+  while(1){
+    printf("비밀번호 (4자리 숫자): ");
+    scanf("%hd", &(s+i)->pw);
+    while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+    if((s+i)->pw < 1000 || (s+i)->pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+    else if(!((s+i)->pw)) printf("숫자로 입력해주세요.");
+    else break;
+  }
+
+  return 1;
+}
+
+void readRecruit(Recruit s){
+  printf("출발지: %s\n", s.depart);
+  printf("도착지: %s\n", s.arrive);
+  printf("날짜: %04hd\n", s.date);
+  printf("시간: %04hd\n", s.time);
+  printf("모집 현황(현재 인원 / 목표 인원): %hd / %hd\n", s.now_num, s.num);
+  printf("모집 종류(T: 택시, C: 카풀): %c\n", s.type);
+  printf("메모 : %s\n", s.memo);
+}
+
+int updateRecruit(Recruit *s, int i){
+  printf("\n출발지 입력: ");
+  scanf("%s", (s+i)->depart);
+
+  printf("도착지 입력: ");
+  scanf("%s", (s+i)->arrive );
+
+  printf("출발날짜 (예, 0522): ");
+  scanf("%04hd", &(s+i)->date);
+
+  printf("출발시간 (예, 1940): ");
+  scanf("%04hd", &(s+i)->time);
+  
+  while(1){
+        printf("모집 인원 (2~4): ");
+        scanf("%hd", &(s+i)->num);
+        if((s+i)->num < 2 || (s+i)->num > 4) printf("모집 인원은 2~4명이어야 합니다.\n");
+        else break;
+  }
+
+  printf("모집종류 (택시 : T, 카풀 : C): ");
+  scanf(" %c", &(s+i)->type);
+  getchar();
+
+  (s+i)->now_num = 1;
+
+  printf("메모(없으면 엔터 입력): ");
+  getchar(); // 입력버퍼 지움
+  fgets((s+i)-> memo, sizeof((s+i) -> memo), stdin);
+  (s+i) -> memo[strlen((s+i) -> memo) -1 ] = '\0';
+
+  while(1){
+        printf("비밀번호 (4자리 숫자): ");
+        scanf("%hd", &(s+i)->pw);
+        while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+        if((s+i)->pw < 1000 || (s+i)->pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+        else if(!((s+i)->pw)) printf("숫자로 입력해주세요.");
+        else break;
+  }
+
+  return 1;
+}
+
+int deleteRecruit(Recruit *s, int i){
+  short int password;
+
+  while(1){
+    printf("비밀번호 (4자리 숫자): ");
+    scanf("%hd", &password );
+    while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+    if((s+i)->pw != password) printf("비밀번호가 다릅니다.\n");
+    else break;
+  }
+
+  (s+i)->date = -1;
+  return 1;
+}
+
+void saveData(Recruit *sp, int index){
+    FILE *fp;
+    fp = fopen("itaxi.txt", "wt");
+
+    for(int i = 0; i < index; i++){
+        if(sp[i].date== -1) continue;
+        fprintf(fp,"\t%s %s %hd %hd %hd %c %hd %s\n", sp[i].depart, sp[i].arrive, sp[i].date, sp[i].time, sp[i].num, sp[i].type, sp[i].now_num, sp[i].memo);
+    }
+
+    fclose(fp);
+    printf("저장됨! \n");
+}
+
+int loadData(Recruit *sp){
+    int i = 0;
+
+    FILE *fp;
+    fp = fopen("itaxi.txt", "rt");
+
+    if(fp == NULL){
+        printf("=> 파일 없음!\n");
+    }
+    else{
+        for(; i < 20; i++){
+            fscanf(fp, "%s", (sp[i].depart));
+            fgetc(fp);
+            if(feof(fp)) break;
+            fscanf(fp, "%s", (sp[i].arrive));
+            fgetc(fp);
+            fscanf(fp,"%hd", &(sp[i].date));
+            fgetc(fp);
+            fscanf(fp, "%hd", &(sp[i].time));
+            fgetc(fp);
+            fscanf(fp, "%hd", &(sp[i].num));
+            fgetc(fp);
+            fscanf(fp, "%c", &(sp[i].type));
+            fgetc(fp);
+            fscanf(fp, "%hd", &(sp[i].now_num));
+            fgetc(fp);
+            fgets((sp+i) -> memo, sizeof((sp+i) -> memo), fp);
+            (sp + i) -> memo[strlen((sp + i) -> memo) - 1] = '\0';
+        }
+        fclose(fp);
+        printf("=> 로딩 성공!\n");
+    }
+
+    return i;
+}
 
 ```
 
