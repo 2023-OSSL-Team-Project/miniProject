@@ -90,7 +90,7 @@ int joinRecruit(Recruit *s, int index){ // 모집 참여
     return 0;
   }
 
-  printf("해당 모집에 참여하시겠습니까?(참여 :1) ");
+  printf("해당 모집에 참여하시겠습니까?(참여: 1): ");
   scanf("%d",&joinok);
 
   if(joinok == 1){
@@ -109,7 +109,7 @@ int exitjoinRecruit(Recruit *s, int index){ // 모집 참여 취소
     return 0;
   }
 
-  printf("해당 모집에서 나가시시겠습니까?(참여 :1) ");
+  printf("해당 모집에서 나가시시겠습니까?(참여: 1):  ");
   scanf("%d",&exitjoinok);
 
   if(exitjoinok == 1){
@@ -126,10 +126,10 @@ void searchPlace(Recruit *s, int index){
     char depart[20];
     char arrive[20];
 
-    printf("검색할 출발지: ");
+    printf("검색 할 출발지: ");
     scanf("%s", depart);
 
-    printf("검색할 도착지: ");
+    printf("검색 할 도착지: ");
     scanf("%s", arrive);
     
     printf("=========================\n");
@@ -191,7 +191,9 @@ void updateMemo(Recruit *sp, int index){
     fgets(newmemo, sizeof(newmemo), stdin);
     newmemo[strlen(newmemo)-1] = '\0';
 
-    char newmemo_with_space[strlen(newmemo) + 1];
+    char newmemo_with_space[strlen(newmemo) + 3];
+
+    strcpy(newmemo_with_space, "");  // 초기화
 
     if(strlen(sp[index].memo) != 0)
       strcpy(newmemo_with_space, ", ");
