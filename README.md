@@ -51,15 +51,16 @@ typedef struct{
 	short int pw; // 비밀번호(4자리 숫자)
 } Recruit;
 
-int createRecruit(Recruit *s); // 모집글 작성
+int createRecruit(Recruit *s, int index); // 모집글 작성
 void readRecruit(Recruit s); // 모집글  조회
-int updateRecruit(Recruit *s); // 모집글 전체 수정
+int updateRecruit(Recruit *s, int index); // 모집글 전체 수정
 int deleteRecruit(Recruit *s, int index); // 모집글 삭제
 
-int saveRecruit(Recruit *s, int count); // 파일 저장
-int loadRecruit(Recruit *s); // 파일 읽어오기
+void saveData(Recruit *s, int index); // 파일 저장
+int loadData(Recruit *s); // 파일 읽어오기
 
 ```
+
 <extra.h>
 ```c
 #include <stdio.h>
@@ -67,20 +68,19 @@ int loadRecruit(Recruit *s); // 파일 읽어오기
 #include <string.h>
 #include "CRUD.h"
 
-int selectMenu(); // 메뉴 선택
+int selectMenu_main(); // 메인화면 메뉴 선택
+int selectMenu1(); // 조회 메뉴 선택
+int selectMenu2(); // 모집 메뉴 선택
 
-int selectDataNo(Recruit *s, int count); // 데이터 번호 선택
-void listRecruit(Recruit *s, int count); // 모집 리스트 출력
 
-int joinRecruit(Recruit *s); // 모집 참여
-int exitjoinRecruit(Recruit *s); // 모집 참여 취소 
-void searchPlace(Recruit *s, int count); // 지점 검색
-void searchDay(Recruit *s, int count); // 날짜 검색
+int selectDataNo(Recruit *s, int index); // 데이터 번호 선택
+void listRecruit(Recruit *s, int index); // 모집 리스트 출력
 
-int editTime(Recruit *s, int count); // 시간, 날짜 수정
-int editPlace(Recruit *s, int count); // 지점 수정
-void updateMemo(Recruit *s, int count); // 추가 메모 작성
-
+int joinRecruit(Recruit *s,int index); // 모집 참여
+int exitjoinRecruit(Recruit *s, int index); // 모집 참여 취소 
+void searchPlace(Recruit *s, int index); // 지점 검색
+void searchDay(Recruit *s, int index); // 날짜 검색
+void updateMemo(Recruit *sp, int index); // 메모 내용 
 ```
 
 <br/>
@@ -103,7 +103,3 @@ void updateMemo(Recruit *s, int count); // 추가 메모 작성
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
  - Wiki 페이지 작성
  - 작성자  코드 구현
-
-<!--
-<p align="center"><img src="" height="" width=""></p>
--->
