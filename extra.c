@@ -18,7 +18,7 @@ int selectMenu_main(){ // 메인화면 메뉴 선택
     printf("2. 모집\n");
     printf("3. 저장\n");
     printf("0. 종료\n");
-    printf("\n원하는 메뉴는? ");
+    printf("\n원하는 메뉴는?: ");
     scanf("%d", &main0);
     
     return main0;
@@ -58,6 +58,7 @@ int selectMenu2(){ // 모집 메뉴 선택
 void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
     printf("=============================\n");
     printf("\n");
+
     for(int i = 0; i < index; i++){
         if(s[i].date == -1) continue;
         printf("NO.%2d\n", i+1);
@@ -79,22 +80,23 @@ int selectDataNo(Recruit *s, int index){ // 데이터 번호 선택
     scanf("%d",&no);
     if(no >= 0 || no < index) break;
   }
+
   return no;
 }
 
 int joinRecruit(Recruit *s, int index){ // 모집 참여
   int joinok;
 
-  if((s+index)->now_num == (s+index)->num){
+  if((s+index) -> now_num == (s+index) -> num){
     printf("이미 마감된 모집입니다.\n");
     return 0;
   }
 
   printf("해당 모집에 참여하시겠습니까?(참여: 1): ");
-  scanf("%d",&joinok);
+  scanf("%d", &joinok);
 
   if(joinok == 1){
-    (s+index)->now_num++;
+    (s+index) -> now_num++;
     return 1;
   }
 
@@ -104,16 +106,16 @@ int joinRecruit(Recruit *s, int index){ // 모집 참여
 int exitjoinRecruit(Recruit *s, int index){ // 모집 참여 취소 
   int exitjoinok;
 
-  if((s+index)->now_num == 1){
+  if((s+index) -> now_num == 1){
     printf("해당 모집에 참여하지 않으셨습니다.\n");
     return 0;
   }
 
   printf("해당 모집에서 나가시시겠습니까?(참여: 1):  ");
-  scanf("%d",&exitjoinok);
+  scanf("%d", &exitjoinok);
 
   if(exitjoinok == 1){
-    (s+index)->now_num--;
+    (s+index) -> now_num--;
     return 1;
   }
 
@@ -136,7 +138,7 @@ void searchPlace(Recruit *s, int index){
     printf("\n");
 
     for(int i = 0; i < index; i++){
-        if(s[i].date== -1) continue;
+        if(s[i].date == -1) continue;
 
         if((strstr(s[i].depart, depart)) && (strstr(s[i].arrive, arrive))){     
             printf("NO.%2d\n", i+1);
@@ -165,7 +167,7 @@ void searchDay(Recruit *s, int count){
     printf("\n");
 
     for(int i = 0; i < count; i++){
-        if(s[i].date== -1) continue;
+        if(s[i].date == -1) continue;
 
         if(s[i].date == search){     
             printf("NO.%2d\n", i+1);
@@ -182,23 +184,23 @@ void searchDay(Recruit *s, int count){
     printf("\n");
 }
 
-void updateMemo(Recruit *sp, int index){
+void updateMemo(Recruit *s, int index){
     getchar();
 
     char newmemo[50];
 
     printf("new memo? ");
     fgets(newmemo, sizeof(newmemo), stdin);
-    newmemo[strlen(newmemo)-1] = '\0';
+    newmemo[strlen(newmemo) - 1] = '\0';
 
     char newmemo_with_space[strlen(newmemo) + 3];
 
     strcpy(newmemo_with_space, "");  // 초기화
 
-    if(strlen(sp[index].memo) != 0)
+    if(strlen(s[index].memo) != 0)
       strcpy(newmemo_with_space, ", ");
   
     strcat(newmemo_with_space, newmemo);
 
-    strcat(sp[index].memo, newmemo_with_space);
+    strcat(s[index].memo, newmemo_with_space);
 }
