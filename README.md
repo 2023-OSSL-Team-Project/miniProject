@@ -103,7 +103,3 @@ void updateMemo(Recruit *sp, int index); // 메모 내용
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
  - Wiki 페이지 작성
  - 작성자  코드 구현
-
-<!--
-<p align="center"><img src="" height="" width=""></p>
--->
