@@ -18,14 +18,19 @@ int selectMenu_main(){ // 메인화면 메뉴 선택
     printf("2. 모집\n");
     printf("3. 저장\n");
     printf("0. 종료\n");
-    printf("\n원하는 메뉴는?: ");
+    printf("\n원하는 메뉴는? ");
     scanf("%d", &main0);
+
+    while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+  
+    if(!(main0 >= 0)) printf("숫자로 입력해주세요.\n");
+    else if(main0 > 3 || main0 < 0) printf("메뉴 안에 있는 숫자로 입력 바랍니다.\n");
     
     return main0;
 }
 
 int selectMenu1(){ // 조회 메뉴 선택
-    int manu1;
+    int menu1;
     
     printf("\n***조회***\n");
     printf("1. 모집조회\n");
@@ -35,13 +40,18 @@ int selectMenu1(){ // 조회 메뉴 선택
     printf("5. 시간검색\n");
     printf("0. 뒤로가기\n");
     printf("\n원하는 메뉴는? ");
-    scanf("%d", &manu1);
-    
-    return manu1;
+    scanf("%d", &menu1);
+
+    while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+
+    if(!(menu1 >= 0)) printf("=>숫자로 입력해주세요.\n");
+    else if(menu1 > 5 || menu1 < 0) printf("=>메뉴 안에 있는 숫자로 입력 바랍니다.\n");
+
+    return menu1;
 }
 
 int selectMenu2(){ // 모집 메뉴 선택
-    int manu2;
+    int menu2;
     
     printf("\n***모집***\n");
     printf("1. 모집글 작성\n");
@@ -50,9 +60,15 @@ int selectMenu2(){ // 모집 메뉴 선택
     printf("4. 메모 추가\n");
     printf("0. 뒤로가기\n");
     printf("\n원하는 메뉴는? ");
-    scanf("%d", &manu2);
+    scanf("%d", &menu2);
+
+    while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
+
+    if(!(menu2 >= 0 )) printf("=>숫자로 입력해주세요.\n");
+    else if(menu2 > 4 || menu2 < -1) printf("=>메뉴 안에 있는 숫자로 입력 바랍니다.\n");
     
-    return manu2;
+    
+    return menu2;
 }
 
 void listRecruit(Recruit *s, int index){ // 모집 리스트 출력
