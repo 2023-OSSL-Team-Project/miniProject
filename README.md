@@ -97,8 +97,13 @@ void updateMemo(Recruit *sp, int index); // 메모 내용
 ## 🚖 팀소개 및 팀원이 맡은 역할
 ### 팀원
  #### 김영빈 [hanyoq15 GITHUB LINK](https://github.com/hanyoq15)
+  - 전체적인 코드 틀 작성
+  - 지점, 날짜 검색 함수
+  - 메뉴 선택 함수(main, 1, 2)
+  - 데이터 번호 선택, 모집 리스트 출력 함수
+  - 모집 참여 취소 함수
+  - 코드 수정
   - README 파일 작성
-  - 참여자 모드 코드 구현
 
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
  - Wiki 페이지 작성
