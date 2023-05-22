@@ -18,7 +18,7 @@ int createRecruit(Recruit *s, int index){
         printf("모집 인원 (2~4): ");
         
 	
-	if (!scanf("%hd", &(s+index) -> num);){
+	if (!scanf("%hd", &(s+index) -> num)){
 		printf("숫자가 아닙니다. ");
 	}
         else if((s+index) -> num < 2 || (s+index) -> num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
