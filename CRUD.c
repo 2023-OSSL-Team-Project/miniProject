@@ -1,42 +1,47 @@
 #include "CRUD.h"
 
-int createRecruit(Recruit *s, int i){
+int createRecruit(Recruit *s, int index){
 
   printf("\n출발지 입력: ");
-	scanf("%s", (s+i)->depart);
+	scanf("%s", (s+index) -> depart);
   
 	printf("도착지 입력: ");
-	scanf("%s", (s+i)->arrive );
+	scanf("%s", (s+index) -> arrive );
   
 	printf("출발날짜 (예, 0522): ");
-  scanf("%hd", &(s+i)->date);
+  scanf("%hd", &(s+index) -> date);
   
 	printf("출발시간 (예, 1940): ");
-  scanf("%hd", &(s+i)->time);
+  scanf("%hd", &(s+index) -> time);
   
 	while(1){
         printf("모집 인원 (2~4): ");
-        scanf("%hd", &(s+i)->num);
-        if((s+i)->num < 2 || (s+i)->num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
+        scanf("%hd", &(s+index) -> num);
+
+        if((s+index) -> num < 2 || (s+index) -> num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
         else break;
   }
 
   printf("모집종류 (택시 : T, 카풀 : C): ");
-  scanf(" %c", &(s+i)->type);
+  scanf(" %c", &(s+index) -> type);
   
-  (s+i)->now_num = 1;
+  (s+index) -> now_num = 1;
 
   printf("메모(없으면 엔터): ");
+
   getchar(); // 입력버퍼 지움
-  fgets((s+i)-> memo, sizeof((s+i) -> memo), stdin);
-  (s+i) -> memo[strlen((s+i) -> memo) -1 ] = '\0';
+
+  fgets((s+index) -> memo, sizeof((s+index) -> memo), stdin);
+  (s+index) -> memo[strlen((s+index) -> memo) -1 ] = '\0';
 
   while(1){
     printf("비밀번호 (4자리 숫자): ");
-    scanf("%hd", &(s+i)->pw);
+    scanf("%hd", &(s+index) -> pw);
+
     while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-    if((s+i)->pw < 1000 || (s+i)->pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
-    else if(!((s+i)->pw)) printf("숫자로 입력해주세요.");
+
+    if((s+index) -> pw < 1000 || (s+index) -> pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+    else if(!((s+index) -> pw)) printf("숫자로 입력해주세요.");
     else break;
   }
 
@@ -53,78 +58,87 @@ void readRecruit(Recruit s){
   printf("메모 : %s\n", s.memo);
 }
 
-int updateRecruit(Recruit *s, int i){
+int updateRecruit(Recruit *s, int index){
   printf("\n출발지 입력: ");
-  scanf("%s", (s+i)->depart);
+  scanf("%s", (s+index) -> depart);
 
   printf("도착지 입력: ");
-  scanf("%s", (s+i)->arrive );
+  scanf("%s", (s+index) -> arrive );
 
   printf("출발날짜 (예, 0522): ");
-  scanf("%04hd", &(s+i)->date);
+  scanf("%04hd", &(s+index) -> date);
 
   printf("출발시간 (예, 1940): ");
-  scanf("%04hd", &(s+i)->time);
+  scanf("%04hd", &(s+index) -> time);
   
   while(1){
         printf("모집 인원 (2~4): ");
-        scanf("%hd", &(s+i)->num);
-        if((s+i)->num < 2 || (s+i)->num > 4) printf("모집 인원은 2~4명이어야 합니다.\n");
+        scanf("%hd", &(s+index) -> num);
+
+        if((s+index) -> num < 2 || (s+index) -> num > 4) printf("모집 인원은 2~4명이어야 합니다.\n");
         else break;
   }
 
   printf("모집종류 (택시 : T, 카풀 : C): ");
-  scanf(" %c", &(s+i)->type);
-  getchar();
+  scanf(" %c", &(s+index) -> type);
 
-  (s+i)->now_num = 1;
+  getchar(); // 입력버퍼 지움
+
+  (s+index) -> now_num = 1;
 
   printf("메모(없으면 엔터 입력): ");
-  getchar(); // 입력버퍼 지움
-  fgets((s+i)-> memo, sizeof((s+i) -> memo), stdin);
-  (s+i) -> memo[strlen((s+i) -> memo) -1 ] = '\0';
+
+  getchar();
+
+  fgets((s+index) -> memo, sizeof((s+index) -> memo), stdin);
+  (s+index) -> memo[strlen((s+index) -> memo) -1 ] = '\0';
 
   while(1){
         printf("비밀번호 (4자리 숫자): ");
-        scanf("%hd", &(s+i)->pw);
+        scanf("%hd", &(s+index) -> pw);
+
         while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-        if((s+i)->pw < 1000 || (s+i)->pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
-        else if(!((s+i)->pw)) printf("숫자로 입력해주세요.");
+
+        if((s+index) -> pw < 1000 || (s+index) -> pw > 9999) printf("비밀번호는 4자리 숫자로 입력해주세요.\n");
+        else if(!((s+index) -> pw)) printf("숫자로 입력해주세요.");
         else break;
   }
 
   return 1;
 }
 
-int deleteRecruit(Recruit *s, int i){
+int deleteRecruit(Recruit *s, int index){
   short int password;
 
   while(1){
     printf("비밀번호 (4자리 숫자): ");
     scanf("%hd", &password );
+
     while (getchar() != '\n'); // 버퍼 비움: 엔터값이 남아있으면 무한 루프 
-    if((s+i)->pw != password) printf("비밀번호가 다릅니다.\n");
+
+    if((s+index) -> pw != password) printf("비밀번호가 다릅니다.\n");
     else break;
   }
 
-  (s+i)->date = -1;
+  (s+index) -> date = -1;
+
   return 1;
 }
 
-void saveData(Recruit *sp, int index){
+void saveData(Recruit *s, int index){
     FILE *fp;
     fp = fopen("itaxi.txt", "wt");
 
     for(int i = 0; i < index; i++){
-        if(sp[i].date== -1) continue;
-        fprintf(fp,"\t%s %s %hd %hd %hd %c %hd %s\n", sp[i].depart, sp[i].arrive, sp[i].date, sp[i].time, sp[i].num, sp[i].type, sp[i].now_num, sp[i].memo);
+        if(s[i].date == -1) continue;
+        fprintf(fp,"\t%s %s %hd %hd %hd %c %hd %s\n", s[i].depart, s[i].arrive, s[i].date, s[i].time, s[i].num, s[i].type, s[i].now_num, s[i].memo);
     }
 
     fclose(fp);
     printf("저장됨! \n");
 }
 
-int loadData(Recruit *sp){
+int loadData(Recruit *s){
     int i = 0;
 
     FILE *fp;
@@ -133,26 +147,28 @@ int loadData(Recruit *sp){
     if(fp == NULL){
         printf("=> 파일 없음!\n");
     }
+
     else{
         for(; i < 20; i++){
-            fscanf(fp, "%s", (sp[i].depart));
+            fscanf(fp, "%s", (s[i].depart));
             fgetc(fp);
             if(feof(fp)) break;
-            fscanf(fp, "%s", (sp[i].arrive));
+            fscanf(fp, "%s", (s[i].arrive));
             fgetc(fp);
-            fscanf(fp,"%hd", &(sp[i].date));
+            fscanf(fp,"%hd", &(s[i].date));
             fgetc(fp);
-            fscanf(fp, "%hd", &(sp[i].time));
+            fscanf(fp, "%hd", &(s[i].time));
             fgetc(fp);
-            fscanf(fp, "%hd", &(sp[i].num));
+            fscanf(fp, "%hd", &(s[i].num));
             fgetc(fp);
-            fscanf(fp, "%c", &(sp[i].type));
+            fscanf(fp, "%c", &(s[i].type));
             fgetc(fp);
-            fscanf(fp, "%hd", &(sp[i].now_num));
+            fscanf(fp, "%hd", &(s[i].now_num));
             fgetc(fp);
-            fgets((sp+i) -> memo, sizeof((sp+i) -> memo), fp);
-            (sp + i) -> memo[strlen((sp + i) -> memo) - 1] = '\0';
+            fgets((s+i) -> memo, sizeof((s+i) -> memo), fp);
+            (s + i) -> memo[strlen((s + i) -> memo) - 1] = '\0';
         }
+
         fclose(fp);
         printf("=> 로딩 성공!\n");
     }
