@@ -106,5 +106,10 @@ void updateMemo(Recruit *sp, int index); // 메모 내용
   - README 파일 작성
 
 #### 김채린 [seizethedaylyn GITHUB LINK](https://github.com/seizethedaylyn)
- - Wiki 페이지 작성
- - 작성자  코드 구현
+  - 전체적인 디자인 제공
+  - create, read, update 함수
+  - 메모 추가 함수
+  - delete 함수
+  - 파일 저장, 불러오는 함수
+  - 코드 수정
+  - wiki페이지 작성
