@@ -15,11 +15,14 @@ int createRecruit(Recruit *s, int index){
   scanf("%hd", &(s+index) -> time);
   
 	while(1){
+	int c;
+		
         printf("모집 인원 (2~4): ");
         
 	
 	if (!scanf("%hd", &(s+index) -> num)){
 		printf("숫자가 아닙니다. ");
+		while (c=getchar() != '\n' && c != EOF);
 	}
         else if((s+index) -> num < 2 || (s+index) -> num > 4) printf("모집 인원은 2~4명이어야 합니다\n");
         else break;
