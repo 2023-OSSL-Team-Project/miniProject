@@ -7,6 +7,7 @@
 int main(void){
   Recruit *sp[20];
   *sp = (Recruit*)malloc(100 * sizeof(Recruit));
+
   int count = 0, main0, menu1, menu2; //count : 데이터 개수
   int index = 0; // 데이터 번호
 
@@ -18,8 +19,10 @@ int main(void){
 
     if (main0 == 0){
       int exitok;
+
       printf("\n=> 종료하시겠습니까? (종료 : 0) ");
       scanf("%d",&exitok);
+      
       if(exitok == 0) break;
     }
     
@@ -141,6 +144,7 @@ int main(void){
       saveData(sp[0], index);
     }
   }
+  
   free(*sp);
   return 0;
 }
