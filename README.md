@@ -53,7 +53,7 @@ typedef struct{
 
 int createRecruit(Recruit *s, int index); // 모집글 작성
 void readRecruit(Recruit s); // 모집글  조회
-int updateRecruit(Recruit *s, int index); // 모집글 전체 수정
+int updateRecruit(Recruit *s, int index); // 모집글 수정
 int deleteRecruit(Recruit *s, int index); // 모집글 삭제
 
 void saveData(Recruit *s, int index); // 파일 저장
